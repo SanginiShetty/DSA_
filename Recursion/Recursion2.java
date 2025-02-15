@@ -175,20 +175,61 @@
 
 //Sum of 1 to n functional recursion
 
+// import java.util.*;
+// public class Recursion2{
+//     static int n;
+//     public static void main(String [] args){
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter a number:");
+//         n= sc.nextInt();
+//         sc.close();
+//         System.out.println(func(n));
+//     }
+//     static int func(int n) {
+//         if(n==0){
+//             return 0;
+//         }
+//         return n + func(n-1);
+//     }
+// }
+
+
+// // Factorial using recursion functional
+// import java.util.*;
+// public class Recursion2{
+//     static int n;
+//     public static void main(String [] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter a number:");
+//         n = sc.nextInt();
+//         sc.close();
+//         System.out.println(fact(n));
+//     }
+//     static int fact(int n){
+//         if(n==0 || n==1 ){
+//             return 1;
+//         }
+//         return n * fact(n-1);
+//     }
+// }
+
+
+//Factorial using recursion parameterized
 import java.util.*;
 public class Recursion2{
-    static int n;
-    public static void main(String [] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number:");
-        n= sc.nextInt();
-        sc.close();
-        System.out.println(func(n));
-    }
-    static int func(int n) {
-        if(n==0){
-            return 0;
+        static int n;
+        public static void main(String [] args){
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a number:");
+            n = sc.nextInt();
+            sc.close();
+            print(n, 1);
         }
-        return n + func(n-1);
+        static void print(int i, int fact){
+            if(i<=1){
+                System.out.println(fact);
+                return;
+            }
+            print(i-1, fact*i);
+        }
     }
-}
