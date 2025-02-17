@@ -23,20 +23,18 @@ public class Hashing {
         System.out.println("Enter the number of query");
         q = sc.nextInt();
 
-        while(q>0) {
+        while(q > 0) {
             int num;
             System.out.println("Enter your query:");
             num = sc.nextInt();
             //fetch
-            System.out.println(hash[num]);
-        }q--;
+            System.out.println("The number of "+ num + " present are:" + hash[num]);
+            q--;
+        }
         sc.close();
-
 
     }
 }
-
-
 
 
 //input text
