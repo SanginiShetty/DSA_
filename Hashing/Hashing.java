@@ -93,3 +93,5 @@ public class Hashing {
 // b
 // c
 
+
+// int[s.charAt(i)] -----> returns int
