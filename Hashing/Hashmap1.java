@@ -101,6 +101,13 @@ public class Hashmap1 {
 
 
     }
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("India", 190);
+        map.put("China", 200);
+        map.put("US", 50);
+        map.put("Nepal", 5);
+    }
 }
 
 //HashMap functions
@@ -110,3 +117,7 @@ public class Hashmap1 {
 // remove()
 // size()
 // keySet()
+
+
+//Best case time complexity--> O(lambda)
+//Worst case time complexity --> O(n)
