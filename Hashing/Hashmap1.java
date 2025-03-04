@@ -1,4 +1,3 @@
-import java.lang.classfile.components.ClassPrinter;
 import java.util.*;
 public class Hashmap1 {
     static class HashMap<K,V> {  //generics / key value pair / parameterized types
@@ -19,7 +18,7 @@ public class Hashmap1 {
         @SuppressWarnings("unchecked")
         public HashMap() { //constructor of HashMap class
             this.N = 4;
-            this.buckets = new LinkedList[4];
+            this.buckets = (LinkedList<Node>[]) new LinkedList[4];
             for(int i=0;i<4; i++) {
                 this.buckets[i] = new LinkedList<>();
             }
@@ -71,8 +70,8 @@ public class Hashmap1 {
                 node.value = value;
             }
 
-            double lambda = {double}n/N;
-            if(lamdba > 2.0){
+            double lambda = (double)n/N;
+            if(lambda > 2.0){
                 //rehashing
                 rehash();
             }
@@ -117,11 +116,20 @@ public class Hashmap1 {
         }
 
         public ArrayList<K> keySet() {
-            return null;
+            ArrayList<K> keys = new ArrayList<>();
+
+            for(int i=0; i<buckets.length; i++) {//bi
+                LinkedList<Node> ll = buckets[i];
+                for(int j=0; j<ll.size(); j++) {//di
+                    Node node = ll.get(j);
+                    keys.add(node.key);
+                }
+            }
+            return keys;
         }
 
         public boolean isEmpty() {
-            return false;
+            return n == 0;
         }
 
 
@@ -133,6 +141,14 @@ public class Hashmap1 {
         map.put("China", 200);
         map.put("US", 50);
         map.put("Nepal", 5);
+
+        ArrayList<String> keys = map.keySet();
+        for(int i=0; i<keys.size(); i++) {
+            System.out.println(keys.get(i)+" "+ map.get(keys.get(i)));
+        }
+
+        map.remove("India");
+        System.out.println(map.get("India"));
     }
 }
 
