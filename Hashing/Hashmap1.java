@@ -79,15 +79,41 @@ public class Hashmap1 {
         }
 
         public boolean containsKey(K key) {
-            return false;
+            int bi = hashFunction(key); //bucket index
+            int di = searchInLL(key, bi); //di = -1 data index where LL ka index is stored
+
+            if(di == -1) { //key doesn't exist
+                return false;
+            }
+            else { //key exists
+                return true;
+            }
         }
 
         public V remove (K key) {
-            return null;
+            int bi = hashFunction(key); //bucket index
+            int di = searchInLL(key, bi); //di = -1 data index where LL ka index is stored
+
+            if(di == -1) { //key doesn't exist
+                return null;
+            }
+            else {
+                Node node = buckets[bi].remove(di);
+                return node.value;
+            }
         }
 
         public V get(K key) {
-            return null;
+            int bi = hashFunction(key); //bucket index
+            int di = searchInLL(key, bi); //di = -1 data index where LL ka index is stored
+
+            if(di == -1) { //key doesn't exist
+                return null;
+            }
+            else {//key exists
+                Node node = buckets[bi].get(di);
+                return node.value;
+            }
         }
 
         public ArrayList<K> keySet() {
