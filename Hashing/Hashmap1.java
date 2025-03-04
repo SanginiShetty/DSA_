@@ -1,3 +1,4 @@
+import java.lang.classfile.components.ClassPrinter;
 import java.util.*;
 public class Hashmap1 {
     static class HashMap<K,V> {  //generics / key value pair / parameterized types
@@ -24,13 +25,37 @@ public class Hashmap1 {
             }
         }
 
-        private int hashFunction(K key) {
+        private int hashFunction(K key) { //0 to N-1
             int bi = key.hashCode();
             return Math.abs(bi) % N;
         }
 
         private int searchInLL(K key, int bi) {
             LinkedList<Node> ll =buckets[bi];
+            int di= 0;
+            for(int i=0; i<ll.size(); i++) {
+                if(ll.get(i).key == key) {
+                    return i; //di
+                }
+            }
+            return -1;
+        }
+
+        private void rehash() {
+            LinkedList<Node> oldBucket[] = buckets;
+            buckets = new LinkedList[N*2];
+
+            for(int i=0; i<N*2; i++) {
+                buckets[i] = new LinkedList<>();
+            }
+
+            for(int i=0; i<oldBucket.length; i++) {
+                LinkedList<Node> ll = oldBucket[i];
+                for(int j=0; j<ll.size(); j++) {
+                    Node node = ll.get(j);
+                    put(node.key, node.value);
+                }
+            }
         }
 
         public void put(K key, V value) {
@@ -49,6 +74,7 @@ public class Hashmap1 {
             double lambda = {double}n/N;
             if(lamdba > 2.0){
                 //rehashing
+                rehash();
             }
         }
 
