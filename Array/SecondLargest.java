@@ -21,5 +21,17 @@ public class SecondLargest {
 
         }
         System.out.println(secondlargest);
+        int smallest = arr[0];
+        int ssmallest = -1;
+        for(int i = 0; i< 5; i++){
+            if(arr[i]<smallest){
+                ssmallest = smallest;
+                smallest = arr[i];
+            }
+            else if(arr[i]>smallest && arr[i]<ssmallest) {
+                ssmallest = arr[i];
+            }
+        }
+        System.out.println(ssmallest);
     }
 }
