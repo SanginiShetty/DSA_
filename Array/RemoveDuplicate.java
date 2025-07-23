@@ -10,3 +10,5 @@ class Solution {
         return i+1;
     }
 }
+
+///remove duplicate from sorted list
