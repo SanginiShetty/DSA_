@@ -1,8 +1,9 @@
 public class LeftRotateByK {
     public static void main(String args[]){
         int[] nums = {1,2,3,4,5,6,7,8};
-        int k = 3;
+        int k = 13;
         int n = nums.length;
+        k = k%n;
         int temp[] = new int[k];
         //temp
         for(int i = 0; i<k; i++){
