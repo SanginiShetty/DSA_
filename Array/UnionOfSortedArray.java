@@ -5,7 +5,7 @@ public class UnionOfSortedArray {
         int nums2[] = {9,8,7,6};
         int n1 = nums1.length;
         int n2 = nums2.length;
-        HashSet<Integer> set= new HashSet<Integer>();
+        HashSet<Integer> set= new HashSet<>();
         for(int i = 0; i<n1; i++){
             set.add(nums1[i]);
         }
