@@ -1,3 +1,4 @@
+import java.util.HashSet;
 public class UnionOfSortedArray {
     public static void main(String[] args) {
         int nums1[] = {1,2,3,4,5,6,7,8};
@@ -18,7 +19,12 @@ public class UnionOfSortedArray {
         // }
         // for(int j=0;j<set.size();j++){
         //     System.out.print(temp[j]+" ");
-        // }//brUte force approach
-        
+
+        List<Integer> unionResult = union(nums1, nums2);
+        System.out.println("Union:"+ unionResult);
+        }
+        public static List<Integer> union(int[] nums1, int[] nums2) {
+            
+        }
     }
 }
