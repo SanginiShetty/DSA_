@@ -24,7 +24,15 @@ public class UnionOfSortedArray {
         System.out.println("Union:"+ unionResult);
         }
         public static List<Integer> union(int[] nums1, int[] nums2) {
-            
+            int i=0, j=0;
+            int n1=nums1.length;
+            int n2=nums2.length;
+            List<Integer> result = new ArrayList<>();
+
+            while(i<n1 && j<n2){
+                //Avoid duplicates in result
+                if(result.isEmpty() || result.get(result.size()-1) != Math.min(nums1))
+            }
         }
     }
 }
