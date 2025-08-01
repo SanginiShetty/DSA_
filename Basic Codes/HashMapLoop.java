@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class HashMapLoop {
     public static void main(String args[]){
-        HashMap<String,String> str= new HashMap<String,String>();
+        HashMap<String,String> str= new HashMap<>();
         str.put("Maharashtra", "Mumbai");
         str.put("Delhi","Delhi");
         str.put("Karnataka", "Bengaluru");
